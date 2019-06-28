@@ -287,6 +287,7 @@ def _get_feature_funcs(sfreq, module_name):
                 feature_funcs[alias] = partial(func, sfreq)
             else:
                 feature_funcs[alias] = func
+
     return feature_funcs
 
 
