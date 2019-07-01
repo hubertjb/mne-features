@@ -48,14 +48,12 @@ class FeatureFunctionTransformer(FunctionTransformer):
                                                          validate=validate,
                                                          kw_args=params)
 
-    def transform(self, X, y='deprecated'):
+    def transform(self, X):
         """Apply the given feature function to the array X.
 
         Parameters
         ----------
         X : ndarray, shape (n_channels, n_times)
-
-        y : (ignored)
 
         Returns
         -------
@@ -66,7 +64,7 @@ class FeatureFunctionTransformer(FunctionTransformer):
             functions. See the doc of the given feature function for more
             details.
         """
-        X_out = super(FeatureFunctionTransformer, self).transform(X, y)
+        X_out = super(FeatureFunctionTransformer, self).transform(X)
         self.output_shape_ = X_out.shape[0]
         return X_out
 
